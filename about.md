@@ -1,33 +1,30 @@
 ---
 layout: page
 permalink: /about/
-title: About the Theme
-tags: [Jekyll, theme, modern, minimal, responsive]
+title: About me
 image:
-  feature: abstract-5.jpg
-  credit: dargadgetz
-  creditlink: http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/
+  feature: orange.jpg
+  credit: wallpaperbod
+  creditlink: http://www.wallpaperbod.com/wallpapers/2013/04/Abstract-Computers-Orange-Operating-Systems-1136x640.jpg
 share: true
 ---
+I am an Associate Professor of Marketing at [Gonzaga University](www.gonzaga.edu), where I teach or have taught courses in marketing, marketing research, multivariate statistics and business analytics. With my introduction to *R* in early 2013, that has become my go-to tool for any analysis. Prior to that, I used SPSS and SAS. Blogging, most of which has happened on the [blogger platform](www.analyticsandvisualization.blogspot.com), has also affected my writing, which has become more frequent. I am huge fan of the IDE from [RStudio](www.rstudio.com). Not a day goes by without it being fired up for either analysis or documentation. 
 
-They say three times the charm, so here is another free responsive Jekyll theme for you. I've learned a ton since open sourcing my first two themes [on Github](http://github.com/mmistakes), and wanted to try a few new things this time around. If you've used my previous themes most of this should be familiar territory...
+# Education
 
-## What HPSTR brings to the table:
 
-* Responsive templates for post, page, and post index `_layouts`. Looks great on mobile, tablet, and desktop devices.
-* Gracefully degrads in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.  
-* Modern and minimal design.
-* Sweet animated menu.
-* Background image support.
-* Readable typography to make your words shine.
-* Support for large images to call out your favorite posts.
-* Comments powered by [Disqus](http://disqus.com) if you choose to enable.
-* Simple and clear permalink structure[^1].
-* [Open Graph](https://developers.facebook.com/docs/opengraph/) and [Twitter Cards](https://dev.twitter.com/docs/cards) support for a better social sharing experience.
-* Simple [custom 404 page]({{ site.url }}/404.html) to get you started.
-* Stylesheets for Pygments and Coderay [syntax highlighting]({{ site.url }}/code-highlighting-post/) to make your code examples look snazzy
-* [Grunt](http://gruntjs.com) build script for easy theme development
+|---------|-------|
+|2006: Ph.D. (Business)   	|[The University of Kansas, Lawrence](www.ku.edu)|   
+|2000: Master of Engineering (Software Systems)   	|[Birla Institute of Technology and Science (B.I.T.S), Pilani (India)](www.bits-pilani.ac.in)   	|   	
+|1997:Master of Management Studies   	|[B.I.T.S, Pilani (India)](www.bits-pilani.ac.in)   	|   	
 
-<div markdown="0"><a href="{{ site.url }}/theme-setup" class="btn btn-info">Install the Theme</a></div>
+Most of my schooling prior to my undergraduate study was from [D.A.V Senior Secondary School](http://en.wikipedia.org/wiki/D.A.V._Boys_Senior_Secondary_School) in Gopalapuram, Chennai. Interestingly, the school does not have a web page, yet. (Or if it is there, I couldn't find it.) The link is to a description on Wikipedia.
 
-[^1]: Example: *domain.com/category-name/post-title*
+# Select Publications
+
+1. Joseph, Kissan, Ramanathan Subramaniam, and Vivek Patil (2013), "The Impact of Consumption Hassle on Pricing Schedules," Managerial and Decision Economics, 34 (1), 1-14.
+
+2. Patil, Vivek H., Matthew Q. McPherson, and Daniel L. Friesner (2010), "The Use of Exploratory Factor Analysis in Public Health: A Note on Parallel Analysis as a Factor Retention Criterion," American Journal of Health Promotion, 24 (3), 178-181.
+
+3. Patil, Vivek H., Surendra N. Singh, Sanjay Mishra, and Todd Donovan (2008), "Efficient Theory Development and Factor Retention Criteria: Abandon the 'Eigenvalue Greater Than One' Criterion", Journal of Business Research, 61 (2), 162-170.
+
