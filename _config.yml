@@ -2,15 +2,10 @@ title:            Adventures in Analytics and Visualization
 description:      Vivek Patil's website and blog for analytics and visualization
 disqus_shortname: patilv
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-<<<<<<< HEAD
 #url:              http://localhost:4000
 #Comment out url when working locally to resolve base urls correctly
 url:              http://patilv.github.io/
 
-=======
-# url:              http://localhost:4000
-url:              http://patilv.github.io
->>>>>>> fb8401eba66f7cb539825d043852d425c03419fd
 # Owner/author information
 owner:
   name:           Vivek Patil
