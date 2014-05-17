@@ -7,6 +7,7 @@ image:
   credit: wallpaperbod
   creditlink: http://www.wallpaperbod.com/wallpapers/2013/04/Abstract-Computers-Orange-Operating-Systems-1136x640.jpg
 share: true
+comments: true
 ---
 
 While I haven't explored all of them in substantial detail, many of them have been useful to me. They are in no particular order and there are many more. Please contact me with any additional ones you'd like included. Given that this site is on Github, you could begin adding entries yourself.
