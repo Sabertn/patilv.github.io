@@ -2,10 +2,6 @@
 layout: page
 permalink: /public-datasets/
 title: Public Datasets
-image:
-  feature: orange.jpg
-  credit: wallpaperbod
-  creditlink: http://www.wallpaperbod.com/wallpapers/2013/04/Abstract-Computers-Orange-Operating-Systems-1136x640.jpg
 share: true
 comments: true
 ---

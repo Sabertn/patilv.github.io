@@ -50,8 +50,8 @@ markdown:    kramdown
 # https://github.com/mojombo/jekyll/wiki/Permalinks
 permalink:   /:categories/:title/
 
-# Amount of post to show on home page
-paginate: 5
+# Number of posts in most recent posts
+paginate: 3
 
 kramdown:
   auto_ids: true
