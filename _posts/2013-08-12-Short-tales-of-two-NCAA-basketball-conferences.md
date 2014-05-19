@@ -11,11 +11,14 @@ Having been at the University of Kansas (Kansas Jayhawks) as a student and now w
  
 A visit to espn.com's page at [http://espn.go.com/mens-college-basketball/teams](http://espn.go.com/mens-college-basketball/teams) shows a listing of universities in different conferences. The image below presents one such example. 
  
-<img src="http://1.bp.blogspot.com/-CBb9C6F8ymA/UgU0-A28XFI/AAAAAAAACaU/_4NHRU3cq7I/s640/espn1.png" height="388" width="400" alt="">
+
+[![](http://1.bp.blogspot.com/-CBb9C6F8ymA/UgU0-A28XFI/AAAAAAAACaU/_4NHRU3cq7I/s640/espn1.png)](http://1.bp.blogspot.com/-CBb9C6F8ymA/UgU0-A28XFI/AAAAAAAACaU/_4NHRU3cq7I/s1600/espn1.png)
 
 A click on the "Stats" link for a school will take you to a page like this.
 
-<img src="http://2.bp.blogspot.com/-atCSsDSmohM/UgkfjUw53PI/AAAAAAAACd8/KKiWoBHpYvk/s400/espn2.png" height="388" width="400" alt="">
+
+[![](http://2.bp.blogspot.com/-atCSsDSmohM/UgkfjUw53PI/AAAAAAAACd8/KKiWoBHpYvk/s400/espn2.png)](http://2.bp.blogspot.com/-atCSsDSmohM/UgkfjUw53PI/AAAAAAAACd8/KKiWoBHpYvk/s1600/espn2.png)
+
 
 The page provides two tables - one of game statistics - total games played and the per game statistics for the season for all players from that team and the second, cumulative numbers for the entire season. Tables in this format are useful, but they do not provide information on
 relationships between variables, between teams, or between conferences. So, the objective of this post is to visualize few of these relationships. In order to do this, we do the following.  
@@ -42,7 +45,9 @@ The image previously presented of a typical statistics page from espn has certai
 1. Each page has two tables, the first about game statistics and the second about the season (cumulative numbers for the season), they have the same headers.
 2. The URL for a page had three different parts.
 
-<img src="http://3.bp.blogspot.com/-Qnizd0BeqqY/UgVAVRY8PjI/AAAAAAAACaw/ybQqmmM9XyU/s640/espn3.png" alt="">
+
+[![](http://3.bp.blogspot.com/-Qnizd0BeqqY/UgVAVRY8PjI/AAAAAAAACaw/ybQqmmM9XyU/s640/espn3.png)](http://3.bp.blogspot.com/-Qnizd0BeqqY/UgVAVRY8PjI/AAAAAAAACaw/ybQqmmM9XyU/s1600/espn3.png)
+
 
 1. Part 1 has the team id, Part 2 the year, and Part 3 was the team name.
 2. The second part, year, represents a season --- so when Part 2 is 2012, the page described the 2011-12 season. This is something to remember to make the necessary change in the data.
@@ -174,7 +179,9 @@ ggplot(Gamestatistics,aes(x=Conference,y=City,color=Conference))+ geom_text(data
 element_text(color="black",size=12))+theme(legend.position="none")+labs(y="",x="")
 {% endhighlight %}
 
-<img src="http://3.bp.blogspot.com/-Zh0PC7hwSUQ/UgVVZ7odqtI/AAAAAAAACbA/EslvhCI_mgg/s640/schoolstable.png" alt="">
+
+[![](http://3.bp.blogspot.com/-Zh0PC7hwSUQ/UgVVZ7odqtI/AAAAAAAACbA/EslvhCI_mgg/s640/schoolstable.png)](http://3.bp.blogspot.com/-Zh0PC7hwSUQ/UgVVZ7odqtI/AAAAAAAACbA/EslvhCI_mgg/s1600/schoolstable.png)
+
 
 Let's plot these cities on a map. First, get the US map from osm, get the list of cities from our data, get their latitudes and longitudes, and add this information to our data.
  
@@ -197,7 +204,9 @@ And, the plot.
 usmap+geom_point(data=Gamestatistics,aes(x=lon,y=lat,color=Conference),size=7)+ ggtitle("Location of WCC and Big 12 Schools")
 {% endhighlight %}
 
-<img src="http://3.bp.blogspot.com/-Wd_Jv4qy1C8/UgVXPRO6oII/AAAAAAAACbY/0SG5kq8ZEZA/s640/schoolsmap.png" alt="">
+
+[![](http://3.bp.blogspot.com/-Wd_Jv4qy1C8/UgVXPRO6oII/AAAAAAAACbY/0SG5kq8ZEZA/s640/schoolsmap.png)](http://3.bp.blogspot.com/-Wd_Jv4qy1C8/UgVXPRO6oII/AAAAAAAACbY/0SG5kq8ZEZA/s1600/schoolsmap.png)
+
 
 1. BYU is in Utah, which isn't a coastal state, unlike the other schools from the WCC.
 2. WVU doesn't exactly fit the region of the other Big 12 schools. 
@@ -213,8 +222,8 @@ geom_histogram()+ggtitle("Histogram of Points.Per.Game for All Teams - Data Coll
 theme(legend.position="none")
 {% endhighlight %}
 
-<img src="http://3.bp.blogspot.com/-kwmd0JxRME4/UgbfhUey44I/AAAAAAAACck/H5PeKemH-R0/s640/histograms.png" alt="">
-
+[![](http://3.bp.blogspot.com/-kwmd0JxRME4/UgbfhUey44I/AAAAAAAACck/H5PeKemH-R0/s640/histograms.png)](http://3.bp.blogspot.com/-kwmd0JxRME4/UgbfhUey44I/AAAAAAAACck/H5PeKemH-R0/s1600/histograms.png)
+ 
 We could also compare the distributions of two different schools on one variable --- let's take a look at Gonzaga Bulldogs and Kansas Jayhawks on say, Points.Per.Game.
 
 {% highlight css %}
@@ -225,8 +234,7 @@ Points.Per.Game for Gonzaga Bulldogs and Kansas Jayhawks for all
 Years")+ facet_wrap(~Year,ncol=4)
 {% endhighlight %}
 
-<img src="http://1.bp.blogspot.com/-f-jP_n_jgiw/UgVbYZ7cJPI/AAAAAAAACcE/UfBNen9-51w/s640/2schoolskdf.png" alt="">
-
+[![](http://1.bp.blogspot.com/-f-jP_n_jgiw/UgVbYZ7cJPI/AAAAAAAACcE/UfBNen9-51w/s640/2schoolskdf.png)](http://1.bp.blogspot.com/-f-jP_n_jgiw/UgVbYZ7cJPI/AAAAAAAACcE/UfBNen9-51w/s1600/2schoolskdf.png)
 
 We might also be interested in seeing how the mean points per game of team players change over years for different teams.
 
@@ -240,7 +248,9 @@ theme(axis.text.x = element_text(angle=-90))+ggtitle("Mean Points Per
 Game of Players of Different Teams in Different Seasons") 
 {% endhighlight %}
 
-<img src="http://2.bp.blogspot.com/-NjYeCVXzFBE/UggojW3ZfqI/AAAAAAAACdc/gZ-Bd4jqKDI/s640/meanppgteamsfinal.png" alt="">
+
+[![](http://2.bp.blogspot.com/-NjYeCVXzFBE/UggojW3ZfqI/AAAAAAAACdc/gZ-Bd4jqKDI/s640/meanppgteamsfinal.png)](http://2.bp.blogspot.com/-NjYeCVXzFBE/UggojW3ZfqI/AAAAAAAACdc/gZ-Bd4jqKDI/s1600/meanppgteamsfinal.png)
+
 
 Alternately, we might be interested in how the mean points per game of team players changed for two teams, across different seasons.
  
@@ -252,7 +262,8 @@ geom_point()+geom_line()+ggtitle("Mean Points Per Game of Players of
 Gonzaga Bulldogs and Kansas Jayhawks in Different Seasons")
 {% endhighlight %}
 
-<img src="http://2.bp.blogspot.com/-Vw4hShWS1iw/Uggnrpe3QWI/AAAAAAAACdU/IiKnseTaHE8/s640/meanppgkugufinal.png" alt="">
+[![](http://2.bp.blogspot.com/-Vw4hShWS1iw/Uggnrpe3QWI/AAAAAAAACdU/IiKnseTaHE8/s640/meanppgkugufinal.png)](http://2.bp.blogspot.com/-Vw4hShWS1iw/Uggnrpe3QWI/AAAAAAAACdU/IiKnseTaHE8/s1600/meanppgkugufinal.png)
+
 
 We could also look at relationships between two variables (Points per game and Assists.Per.Game) in teams across different years and add in a LOESS curve.
 
@@ -264,7 +275,8 @@ Assists for All Teams -- Data Collapsed Across All Years")+ facet_wrap(~Team,nco
 theme(legend.position="none")
 {% endhighlight %}
 
-<img src="http://3.bp.blogspot.com/-U2HrXNuTvHU/UgbgE6goDXI/AAAAAAAACcs/p2tZbjwy2Cs/s640/loess.png" alt="">
+[![](http://3.bp.blogspot.com/-U2HrXNuTvHU/UgbgE6goDXI/AAAAAAAACcs/p2tZbjwy2Cs/s640/loess.png)](http://3.bp.blogspot.com/-U2HrXNuTvHU/UgbgE6goDXI/AAAAAAAACcs/p2tZbjwy2Cs/s1600/loess.png)
+
 
 We could also compare the relationship of two variables - points per game and assists per game, for two or more schools.
  
@@ -275,7 +287,7 @@ facet_wrap(~Year,ncol=4)+ ggtitle("Scatter Plots with LOESS smoothing of Points.
 Assists for Gonzaga Bulldogs and Kansas Jayhawks -- Data Collapsed Across All Years")
 {% endhighlight %}
 
-<img src="http://3.bp.blogspot.com/-xvLN_kLECHc/UgVcXv5BYaI/AAAAAAAACcU/6kDJ7lXRDws/s640/2schoolsscatter.png" alt="">
+[![](http://3.bp.blogspot.com/-xvLN_kLECHc/UgVcXv5BYaI/AAAAAAAACcU/6kDJ7lXRDws/s640/2schoolsscatter.png)](http://3.bp.blogspot.com/-xvLN_kLECHc/UgVcXv5BYaI/AAAAAAAACcU/6kDJ7lXRDws/s1600/2schoolsscatter.png)
 
 
 ### Step 4: Interactively generate graphs - for any combination of variable and teams

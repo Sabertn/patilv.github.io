@@ -30,7 +30,8 @@ Below is the US map color coded based on number of schools in different States. 
 
 Remember, a school with a higher index number was better ranked. Here, we look at how index numbers were distributed across different states. To do this, we use boxplots, which show the minimum, maximum, 25th percentile, 50th percentile (median), and the 75th percentile of the distribution. The blue dots in the middle of the box are the mean index scores.
  
-<img src="http://2.bp.blogspot.com/-oxt707x4xeo/Ucstvy4c2vI/AAAAAAAACUA/4D7KWV0C-24/s640/StatesBoxplot.png" alt="">
+[![](http://2.bp.blogspot.com/-oxt707x4xeo/Ucstvy4c2vI/AAAAAAAACUA/4D7KWV0C-24/s640/StatesBoxplot.png)](http://2.bp.blogspot.com/-oxt707x4xeo/Ucstvy4c2vI/AAAAAAAACUA/4D7KWV0C-24/s1600/StatesBoxplot.png)
+
 
 **Observations**
 
@@ -40,7 +41,9 @@ schools, the spread indicates the higher variance in the index scores across sch
  
 # Distribution of Index Numbers by Type of School, Teaching Quality Grade, Facilities and Services Grade, and Job Placement Grade
 
-<img src="http://1.bp.blogspot.com/-R4hklgaM4-8/Ucsv88t3qPI/AAAAAAAACUQ/5vthDP7TlWs/s640/Catvarsboxplots.png" alt="">
+
+[![](http://1.bp.blogspot.com/-R4hklgaM4-8/Ucsv88t3qPI/AAAAAAAACUQ/5vthDP7TlWs/s640/Catvarsboxplots.png)](http://1.bp.blogspot.com/-R4hklgaM4-8/Ucsv88t3qPI/AAAAAAAACUQ/5vthDP7TlWs/s1600/Catvarsboxplots.png)
+
 
 **Observations**
 
@@ -51,7 +54,8 @@ schools, the spread indicates the higher variance in the index scores across sch
 
 Here, we will look at a correlation analysis. (I've clubbed rank-ordered variables with ratio-scaled ones, but come on.) Below, is a graph with correlation coefficients color coded based on their value. Positive coefficients have been coded in blue and negative ones in red. Intensity of colors indicate the value. 
 
-<img src="http://3.bp.blogspot.com/-JHyXlJS0Poc/Ucsynshz6VI/AAAAAAAACUo/n4QXkuosgyQ/s400/CorrMatrix.png" alt="">
+
+[![](http://3.bp.blogspot.com/-JHyXlJS0Poc/Ucsynshz6VI/AAAAAAAACUo/n4QXkuosgyQ/s400/CorrMatrix.png)](http://3.bp.blogspot.com/-JHyXlJS0Poc/Ucsynshz6VI/AAAAAAAACUo/n4QXkuosgyQ/s1600/CorrMatrix.png)
 
 **Observations**
 
