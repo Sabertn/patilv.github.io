@@ -5,6 +5,13 @@ title: About me
 comments: true
 share: true
 ---
+<style>
+hr { display: block; height: 2px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; }
+</style>
+<hr COLOR="firebrick" WIDTH="100%">
+
 I am an Associate Professor of Marketing at [Gonzaga University](www.gonzaga.edu), where I teach or have taught courses in marketing, marketing research, multivariate statistics and business analytics. With my introduction to *R* in early 2013, that has become my go-to tool for any analysis. Prior to that, I used SPSS and SAS. Blogging, most of which has happened on the [blogger platform](www.analyticsandvisualization.blogspot.com), has also affected my writing, which has become more frequent. I am huge fan of the IDE from [RStudio](www.rstudio.com). Not a day goes by without it being fired up for either analysis or documentation. 
 
 # Education

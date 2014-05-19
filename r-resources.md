@@ -5,6 +5,12 @@ title: R-Resources
 share: true
 comments: true
 ---
+<style>
+hr { display: block; height: 2px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; }
+</style>
+<hr COLOR="firebrick" WIDTH="100%">
 
 While I haven't explored all of them in substantial detail, many of them have been useful to me. They are in no particular order and there are many more. Please contact me with any additional ones you'd like included. Given that this site is on Github, you could begin adding entries yourself.
 
