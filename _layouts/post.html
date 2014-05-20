@@ -6,6 +6,12 @@
 <head>
 {% include head.html %}
 </head>
+<style>
+hr { display: block; height: 2px;
+    border: 0; border-top: 1px solid;
+	WIDTH=100%; color:firebrick;
+    margin: 1em 0; padding: 0; }
+</style>
 
 <body id="post" {% if page.image.feature %}class="feature"{% endif %}>
 
@@ -31,7 +37,8 @@
           <h1 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
         {% endif %}
         <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
-      </div><!-- /.header-title-wrap -->
+		<hr>
+		</div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
       {{ content }}

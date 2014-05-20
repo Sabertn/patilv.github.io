@@ -5,13 +5,6 @@ title: Public Datasets
 share: true
 comments: true
 ---
-<style>
-hr { display: block; height: 2px;
-    border: 0; border-top: 1px solid #ccc;
-    margin: 1em 0; padding: 0; }
-</style>
-<hr COLOR="firebrick" WIDTH="100%">
-
 This is a listing of few publically available sources of data or other lists, which provide a listing.
 
 Carnegie Mellon : [http://lib.stat.cmu.edu/datasets/](http://lib.stat.cmu.edu/datasets/)  

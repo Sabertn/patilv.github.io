@@ -6,6 +6,12 @@
 <head>
 {% include head.html %}
 </head>
+<style>
+hr { display: block; height: 2px;
+    border: 0; border-top: 1px solid;
+	WIDTH=100%; color:firebrick;
+    margin: 1em 0; padding: 0; }
+</style>
 
 <body id="page" {% if page.image.feature %}class="feature"{% endif %}>
 
@@ -26,7 +32,8 @@
     <header class="header-title">
       <div class="header-title-wrap">
         <h1 class="entry-title">{{ page.title }}</h1>
-      </div><!-- /.header-title-wrap -->
+      <hr>
+	  </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
       {{ content }}

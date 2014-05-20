@@ -12,13 +12,12 @@ share: true
 ---
 <style>
 hr { display: block; height: 2px;
-    border: 0; border-top: 1px solid #ccc;
+    border: 0; border-top: 1px solid;
+	WIDTH=100%; color:firebrick;
     margin: 1em 0; padding: 0; }
 </style>
-
-	
 <h1>Welcome! </h1>
-<hr COLOR="firebrick" WIDTH="100%">
+<hr>
 This site was initially hosted on the <a href="http://analyticsandvisualization.blogspot.com">blogger platform</a> and is now being migrated on to a Jekyll/GitHub platform. The purpose of this site is three-fold.
 
 <ol>
@@ -27,7 +26,7 @@ This site was initially hosted on the <a href="http://analyticsandvisualization.
 <li> Provide a listing of technical resources to people interested in R and other packages that I have found useful.
 </ol>
 <h1> Most Recent Post
-<HR COLOR="firebrick" WIDTH="100%">
+<hr>
 {% for post in paginator.posts %}
 <article class="hentry">
   <header>
