@@ -6,12 +6,12 @@ tags: [areachart, barchart, boxplot, correlation, densityplot, dotplot, ggplot2,
 comments: true
 share: true
 ---
-In this series of 3 posts, I use a simulated dataset (7 variables -3 factor and 4 numeric - and a sample size of 50) to create graphs/charts using base R, and replicate them using ggplot2, and rCharts. This is not an attempt to create an exhaustive database of graphs/charts of all possible combinations, but it was an exercise to generate some of the common ones (in my view). These include dot plots, histograms, box plots, bar charts, scatter plots, density curves, and line graphs and a few more. I am sure the code can be further optimized  and it could use some finishing touches with many things like legends, axes labels, and color, but at the core, I think it does its job. Thanks to Ramnath Vaidyanathan for having answers to all questions and to the kind rCharts, ggplot2, and R community for the free knowledge base available on the Internet. The code for these pages can be found on github. 
+In this series of 3 posts, I use a simulated dataset (7 variables -3 factor and 4 numeric - and a sample size of 50) to create graphs/charts using base R, and replicate them using ggplot2, and rCharts. This is not an attempt to create an exhaustive database of graphs/charts of all possible combinations, but it was an exercise to generate some of the common ones (in my view). These include dot plots, histograms, box plots, bar charts, scatter plots, density curves, and line graphs and a few more. I am sure the code can be further optimized  and it could use some finishing touches with many things like legends, axes labels, and color, but at the core, I think it does its job. Thanks to Ramnath Vaidyanathan for having answers to all questions and to the kind rCharts, ggplot2, and R community for the free knowledge base available on the Internet. [The code for these pages can be found on github.](https://github.com/patilv/3graphs) 
 
-### Part 1 in the series (using Base R) Can be Found Here
+[Part 1 in the series (using Base R) can be found here](http://patilv.github.io//Replication-of-few-graphs-charts-in-base-R-ggplot2-and-rCharts-part-1-base-R/)
 
 
-### Part 3 in the series (using rCharts) Can be Found Here
+[Part 3 in the series (using rCharts) can be found here](http://patilv.github.io//Replication-of-few-graphs-charts-in-base-R-ggplot2-and-rCharts-part-3-rCharts/)
 
 
 # Data
