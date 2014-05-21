@@ -2,7 +2,7 @@
 layout: post
 title:  "Short tales of two NCAA basketball conferences (Big 12 and West Coast) using graphs"
 description: "ncaa sports"
-tags: [R, ggplot2, shiny]
+tags: [densityplot, ggplot2, histogram, linechart, R, scatterplot, Shiny, Sports]
 comments: true
 share: true
 ---
@@ -58,7 +58,7 @@ The image previously presented of a typical statistics page from espn has certai
 
 First the packages required for all of this code.
 
-{% highlight css %} 
+{% highlight r %} 
 library(XML)
 library(ggmap)
 library(ggplot2)
@@ -67,7 +67,7 @@ library(plyr)
 
 Initialize two empty master data frames, which we'll call Gamestatistics and Seasonstatistics, and provide column names from the two tables.
 
-{% highlight css %}
+{% highlight r %}
 Gamestatistics=as.data.frame(matrix(ncol=16))
 names(Gamestatistics)
 = c("Player", "GP", "MIN", "PPG", "RPG", "APG", "SPG", "BPG", "TPG", "FG%", "FT%", "3P%","Year","Team","City","Conference")
@@ -80,7 +80,7 @@ names(Seasonstatistics)
 
 Note that we have created columns for Year, Team, City, and Conference - variables beyond the columns provided by the two tables and will either have to be calculated or manually determined. For each of the 20 colleges of interest from the 2 conferences, we can prepare something like the following.
 
-{% highlight css %}
+{% highlight r %}
 URLpart1="http://espn.go.com/mens-college-basketball/team/stats/_/id/2250/year/"
 URLpart3 ="/gonzaga-bulldogs"
 Team="Gonzaga Bulldogs"
@@ -90,7 +90,7 @@ Conference="West Coast"
 
 The city information was obtained from Wikipedia for those I didn't know and the other information was available on the espn page for that university. Once we have prepared the parameters required to send to our function (getData), we then call on it. Remember that the function should return two tables. This we collect in a list named gameandseasonstats and extract the updated master tables - Gamestatistics and Seasonstatistics tables from the list.
  
-{% highlight css %}
+{% highlight r %}
 gameandseasonstats=getData(URLpart1,URLpart3,Team,City,Conference)
 Gamestatistics=gameandseasonstats[[1]]
 Seasonstatistics=gameandseasonstats[[2]]
@@ -99,7 +99,7 @@ Seasonstatistics=gameandseasonstats[[2]]
 
 Now the function.
 
-{% highlight css %}
+{% highlight r %}
 getData=function(URLpart1,URLpart3,Team,City,Conference){
 for (i in 2002:2013){
 URL=paste(paste(URLpart1,as.character(i),sep=""),URLpart3,sep="")
@@ -139,7 +139,7 @@ Now, we have collected data on 2 tables for 20 schools from 2 different conferen
  
 The dataframes have three types of rows which need to be removed. These are instances where the value of "Players" is either "Players", "Total", or "NA" (remember, we initialized empty dataframes). This is from the way tables were read by our function. That's easy.  
 
-{% highlight css %}
+{% highlight r  %}
 Gamestatistics=Gamestatistics[which(Gamestatistics$Player!="NA"),]
 Gamestatistics=Gamestatistics[which(Gamestatistics$Player!="Player"),]
 Gamestatistics=Gamestatistics[which(Gamestatistics$Player!="Totals"),]
@@ -148,14 +148,14 @@ Gamestatistics=Gamestatistics[which(Gamestatistics$Player!="Totals"),]
 Converting few variables to factors and few to numbers was accomplished
 by these two lines.
 
-{% highlight css %}
+{% highlight r  %}
 for (i in 2:12){Gamestatistics[, i] = as.numeric(as.character(Gamestatistics[,i]))}
 for(i in 14:16){Gamestatistics[,i]=as.factor(Gamestatistics[,i])}
 {% endhighlight %}
 
 Then, columns were renamed to explain each variable completely, so PPG became Points.Per.Game. This could've done this at the very beginning, but I didn't have the foresight.
 
-{% highlight css %}
+{% highlight r  %}
 names(Gamestatistics) = c("Player", "Games.Played", "Minutes", "Points.Per.Game", "Rebounds.Per.Game", 
 "Assists.Per.Game","Steals.Per.Game", "Blocks.Per.Game", "Turnovers.Per.Game", "Field.Goal.Percent", "Free.Throw.Percent", 
 "Three.Point.FieldGoal.Percent", "Year", "Team", "City","Conference")
@@ -163,7 +163,7 @@ names(Gamestatistics) = c("Player", "Games.Played", "Minutes", "Points.Per.Game"
 
 And the last thing left was converting years back to seasons ---  so 2002 became "2001-2002", accomplished using this for years between 2002 and 2013.
 
-{% highlight css %}
+{% highlight r  %}
 Gamestatistics$Year<-gsub("2002", "2001-2002", Gamestatistics$Year)
 {% endhighlight %}
 
@@ -173,7 +173,7 @@ Remember, these changes are required for the second table as well --- Seasonstat
  
 Which 20 schools did we collect data on?
 
-{% highlight css %}
+{% highlight r  %}
 ggplot(Gamestatistics,aes(x=Conference,y=City,color=Conference))+ geom_text(data=Gamestatistics,aes(label=Team))+
  theme(axis.text.x = element_text(color="black",size=12))+ theme(axis.text.y =
 element_text(color="black",size=12))+theme(legend.position="none")+labs(y="",x="")
@@ -185,7 +185,7 @@ element_text(color="black",size=12))+theme(legend.position="none")+labs(y="",x="
 
 Let's plot these cities on a map. First, get the US map from osm, get the list of cities from our data, get their latitudes and longitudes, and add this information to our data.
  
-{% highlight css %}
+{% highlight r  %}
 location=c(-125,24.207,-70,50) # It took a bit to figure these coordinates out - 
 # zoom to the appropriate location and level using openstreetmap.org and find coordinates from the # export link
 map=get_map(location=location,maptype="roadmap",source="osm")
@@ -200,7 +200,7 @@ Gamestatistics$lon=locs$lon[ match(Gamestatistics$City,locs$City)]
 
 And, the plot.
 
-{% highlight css %}
+{% highlight r  %}
 usmap+geom_point(data=Gamestatistics,aes(x=lon,y=lat,color=Conference),size=7)+ ggtitle("Location of WCC and Big 12 Schools")
 {% endhighlight %}
 
@@ -216,7 +216,7 @@ Just a thought: On what bases are conferences named? Big 12 has 10 teams, but Bi
  
 Let's plot histograms of some variable, say Points.Per.Game, for all teams. 
  
-{% highlight css %}
+{% highlight r  %}
 ggplot(Gamestatistics,aes(x=Points.Per.Game, fill=Team))+
 geom_histogram()+ggtitle("Histogram of Points.Per.Game for All Teams - Data Collapsed Across All Years")+ facet_wrap(~Team,ncol=4) + 
 theme(legend.position="none")
@@ -226,7 +226,7 @@ theme(legend.position="none")
  
 We could also compare the distributions of two different schools on one variable --- let's take a look at Gonzaga Bulldogs and Kansas Jayhawks on say, Points.Per.Game.
 
-{% highlight css %}
+{% highlight r  %}
 ggplot(subset(Gamestatistics,Team %in% c("Gonzaga Bulldogs","Kansas
 Jayhawks")),aes(x=Points.Per.Game, fill=Team))+ 
 geom_density(alpha=.3)+ ggtitle("Kernel Density Plots of
@@ -238,7 +238,7 @@ Years")+ facet_wrap(~Year,ncol=4)
 
 We might also be interested in seeing how the mean points per game of team players change over years for different teams.
 
-{% highlight css %}
+{% highlight r  %}
 # Mean calculation of Points.Per.Game of Team players for a season
 ppgmean=ddply(Gamestatistics,.(Team,Year),summarize,Mean.Points.Per.Game=mean(Points.Per.Game))
 #Plot
@@ -254,7 +254,7 @@ Game of Players of Different Teams in Different Seasons")
 
 Alternately, we might be interested in how the mean points per game of team players changed for two teams, across different seasons.
  
-{% highlight css %}
+{% highlight r  %}
 # Mean points per game comparison for two teams, say, Gonzaga and Kansas, over years
 ggplot(subset(ppgmean,Team %in% c("Gonzaga Bulldogs","Kansas
 Jayhawks")),aes(x=Year,y=Mean.Points.Per.Game,color=Team,group=Team))+
@@ -267,7 +267,7 @@ Gonzaga Bulldogs and Kansas Jayhawks in Different Seasons")
 
 We could also look at relationships between two variables (Points per game and Assists.Per.Game) in teams across different years and add in a LOESS curve.
 
-{% highlight css %}
+{% highlight r  %}
 ggplot(Gamestatistics,aes(x=Points.Per.Game, y=Assists.Per.Game,
 color=Team))+ geom_jitter()+ geom_smooth(method='loess',level=0,size=1,aes(color=Team))+
 ggtitle("Scatter Plots with LOESS smoothing of Points.Per.Game and
@@ -280,7 +280,7 @@ theme(legend.position="none")
 
 We could also compare the relationship of two variables - points per game and assists per game, for two or more schools.
  
-{% highlight css %}
+{% highlight r  %}
 ggplot(subset(Gamestatistics,Team %in% c("Gonzaga Bulldogs","Kansas Jayhawks")),aes(x=Points.Per.Game, y=Assists.Per.Game, color=Team))+
 geom_jitter()+ geom_smooth(method='loess',level=0,size=1,aes(color=Team))+
 facet_wrap(~Year,ncol=4)+ ggtitle("Scatter Plots with LOESS smoothing of Points.Per.Game and
@@ -296,7 +296,7 @@ Of course, previously shown graphs could be generated for comparing both confere
 interactivity by letting you play around with variables and schools will help. For this, we rely on the shiny server platform from RStudio.  [Our shiny server application uses three preloaded data files - Gamestatisticscleaned.rda, and files for team-wise and conference-wise
 means (labeled meansteams.rda and meansconferences.rda, respectively) of all variables for all years and presents 9 different graphs.](http://glimmer.rstudio.com/vivekpatil/ESPNBball/) The code to generate these additional data files is given below. 
  
-{% highlight css %} 
+{% highlight r  %} 
 meansteams=ddply(Gamestatistics,.(Team,Year),summarize,
 Points.Per.Game=mean(Points.Per.Game),
 Games.Played=mean(Games.Played),

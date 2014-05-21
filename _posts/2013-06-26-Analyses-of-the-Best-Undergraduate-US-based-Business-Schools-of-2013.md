@@ -2,7 +2,7 @@
 layout: post
 title: "Analyses of the Best Undergraduate (US-based) Business Schools of 2013"
 description: "Best business schools"
-tags: [R, googleVis, shiny, ggplot2]
+tags: [boxplot, choropleth, correlation, education, ggplot2, googleVis, motionchart, R]
 comments: true
 share: true
 ---

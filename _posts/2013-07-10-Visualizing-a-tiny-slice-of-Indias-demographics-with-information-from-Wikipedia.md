@@ -2,7 +2,7 @@
 layout: post
 title: "Visualizing a tiny slice of India's demographics with information from Wikipedia"
 description: "Best business schools"
-tags: [R, googleVis, textmining, ggplot2]
+tags: [choropleth, correlation, dotplot, ggplot2, googleVis, India, linechart, R, wordcloud]
 comments: true
 share: true
 ---

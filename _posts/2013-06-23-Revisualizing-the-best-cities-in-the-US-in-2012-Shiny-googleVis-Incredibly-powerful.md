@@ -2,7 +2,7 @@
 layout: post
 title: "Revisualizing the best cities in the US in 2012- Shiny + googleVis = Incredibly powerful"
 description: "Best cities revisited"
-tags: [R, googleVis, shiny]
+tags: [googleVis, motionchart, R, Shiny]
 comments: true
 share: true
 ---

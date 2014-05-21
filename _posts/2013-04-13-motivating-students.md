@@ -2,7 +2,7 @@
 layout: post
 title: "Motivating Students"
 description: "Charts shown to students"
-tags: [R, ggplot2]
+tags: [R, ggplot2, dot plot, histogram]
 comments: true
 share: true
 ---

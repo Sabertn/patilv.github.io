@@ -2,7 +2,7 @@
 layout: post
 title: "Tweetanalytics - Interactively analyzing tweets from accounts of 5 universities"
 description: "University accounts"
-tags: [R, ggplot2, shiny, text mining]
+tags: [barchart, ggplot2, linechart, R, Shiny, text mining, twitter, wordcloud]
 comments: true
 share: true
 ---

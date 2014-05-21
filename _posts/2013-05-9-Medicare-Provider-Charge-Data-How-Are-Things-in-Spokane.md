@@ -2,7 +2,7 @@
 layout: post
 title: "Medicare Provider Charge Data - How Are Things in Spokane?"
 description: "Medicare charge data"
-tags: [R, ggplot2, shiny]
+tags: [barchart, densityplot, ggplot2, histogram, R, scatterplot, Shiny, healthcare]
 comments: true
 share: true
 ---

@@ -2,7 +2,7 @@
 layout: post
 title:  "Lilac Bloomsday Run in Graphs"
 description: "Bloomsday"
-tags: [R, ggplot2]
+tags: [areachart, barchart, dotplot, ggplot2, linechart, R, Sports]
 comments: true
 share: true
 ---

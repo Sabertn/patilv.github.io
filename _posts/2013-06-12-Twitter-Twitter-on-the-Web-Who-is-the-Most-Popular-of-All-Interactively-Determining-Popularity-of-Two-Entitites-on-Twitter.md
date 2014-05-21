@@ -2,7 +2,7 @@
 layout: post
 title: "Twitter Twitter on the Web, Who is the Most Popular of All? Interactively Determining Popularity of Two Entitites on Twitter"
 description: "Popularity of entities"
-tags: [R, ggplot2, shiny, text mining]
+tags: [barchart, boxplot, densityplot, ggplot2, linechart, R, sentiment, Shiny, text mining, twitter, wordcloud]
 comments: true
 share: true
 ---

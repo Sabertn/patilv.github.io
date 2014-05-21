@@ -2,7 +2,7 @@
 layout: post
 title: "Interacting, on demand, with 2012 best cities data and plotting different graphs-Experiments with ggplot2 on shiny server"
 description: "2012 best cities"
-tags: [R, ggplot2, shiny]
+tags: [barchart, dotplot, ggplot2, R, scatterplot, Shiny]
 comments: true
 share: true
 ---

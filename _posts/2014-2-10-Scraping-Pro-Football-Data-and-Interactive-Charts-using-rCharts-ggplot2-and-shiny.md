@@ -1,0 +1,385 @@
+---
+layout: post
+title: "Scraping Pro-Football Data and Interactive Charts using rCharts, ggplot2, and shiny"
+description: "Pro-football"
+tags: [barchart, ggplot2, linechart, R, rCharts, scatterplot, Shiny, Sports]
+comments: true
+share: true
+---
+
+This post uses pro-football (American) boxscore data from 1966 through 2013 and generates few interactive charts using rCharts, ggplot2 and shiny.  It also provided a first time exposure to the power of dplyr. Data for these charts were scraped from the excellent reference site, [pro-football-reference.com,](http://pro-football-reference.com/) using a function written in R. (This site has been used previously by other bloggers as a source for their data as well. See [here](http://pirategrunt.com/2012/12/01/pro-football-data/) and [here](http://www.jaredlander.com/2012/02/football-score-distributions/) for two examples.) Rest of this post has been created using slidify. The [code for this post and relevant data are available at github](https://github.com/patilv/profootball). The code for the [shiny application can be found here on github as well](https://github.com/patilv/profootballshiny). (shiny is amazing, thanks R-Studio team and a big thanks to Ramnath Vaidyanathan for his support on rCharts).
+
+
+
+
+# Extracting Data
+
+When one clicks on any of the years for NFL Boxscores from this page at <a href="http://pro-football-reference.com/boxscores" target="_blank">pro-football-reference.com </a>, they are taken to a page that provides data on weekly games played for that year. Data include Week number, Day of game, Date, winning team, losing team, whether the losing team was at home ground, points of winner, points of loser (tie if both were same), net yards gained by winner, net yards gained by loser,  turnovers by winner, and turnover by loser. The address of the page follows a specific pattern. For example:
+
+* URL for data in 1999 is : <a href="http://www.pro-football-reference.com/years/1999/games.htm" target="_blank">http://www.pro-football-reference.com/years/1999/games.htm </a>    
+* URL for data in 2013 is: <a href="http://www.pro-football-reference.com/years/2013/games.htm" target="_blank">http://www.pro-football-reference.com/years/2013/games.htm </a>
+
+There are 3 parts to the URL.
+
+1. A constant first part: "http://www.pro-football-reference.com/years/"
+2. A variable second part denoting the year, and
+3. A constant third part: "/games.htm"
+
+The earliest year for which data are available happens to be 1922; it can be arrived at by consecutively clicking the link to the previous year from every year's page. The strategy for scraping is to do the following.
+
+1. Initialize an empty dataframe with the same number of columns as data from the website.
+2. Use a function written for this post to retrieve data from a typical page and append data to our empty dataframe, and
+3. Iterate step 2 for years between 1922 through 2013. Although the function extracts data from all years, our analyses will be restricted to the years beyond 1966 (the first season with a Super Bowl)
+
+## Scraper Function
+
+
+{% highlight r %}
+library(XML)
+weeklystats=as.data.frame(matrix(ncol=14)) # Initializing our empty dataframe
+
+names(weeklystats) = c("Week", "Day", "Date", "Blank", "Win.Team", "At", "Lose.Team", 
+                       "Points.Win", "Points.Lose", "YardsGained.Win", "Turnovers.Win", 
+                       "YardsGained.Lose","Turnovers.Lose","Year") # Naming columns
+
+URLpart1="http://www.pro-football-reference.com/years/" 
+URLpart3 ="/games.htm" 
+
+#### Our workhorse function ####
+
+getData=function(URLpart1,URLpart3){
+  for (i in 1922:2013){
+    URL=paste(URLpart1,as.character(i),URLpart3,sep="")
+    tablefromURL = readHTMLTable(URL)
+    table=tablefromURL[[1]]
+    names(table) = c("Week", "Day", "Date", "Blank", "Win.Team", "At", "Lose.Team", 
+                     "Points.Win", "Points.Lose", "YardsGained.Win", "Turnovers.Win", 
+                     "YardsGained.Lose","Turnovers.Lose")
+    table$Year=i # Inserting a value for the year 
+    weeklystats=rbind(table,weeklystats)  # Appending happening here
+    }
+  return(weeklystats)
+}
+weeklystats=getData(URLpart1,URLpart3) # Calling on our workhorse to do its job and saving the raw data results in weeklystats
+save(weeklystats,file="rawweeklystats.rda")
+{% endhighlight %}
+
+
+# Cleaning Data
+
+Let us now verify if we have exactly 48 Super Bowls in our data.
+
+
+{% highlight r %}
+load("rawweeklystats.rda")
+dim(weeklystats) # tells us number of rows and columns
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 15205    14
+{% endhighlight %}
+
+
+
+{% highlight r %}
+table(weeklystats$Week)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## 
+##                   1        10        11        12        13        14 
+##        81       927       873       855       827       724       708 
+##        15        16        17         2         3         4         5 
+##       521       507       367       931       920       906       882 
+##         6         7         8         9 ConfChamp  Division SuperBowl 
+##       873       883       867       871       125       191        48 
+##      Week  WildCard        18 
+##      1177       126        14
+{% endhighlight %}
+
+Okay, 48 Super Bowls. We are on track. The Week column also has values of "Week", "NA", and ""(blank). 
+Let us clean data further. Putting dplyr to work.
+
+
+{% highlight r %}
+library(dplyr)
+weeklystatsdf=tbl_df(weeklystats) # tbl_df enables printing only few rows/cols on screen... 
+weeklystatsdf=filter(weeklystatsdf, Week!="Week", Week!="NA", Week!="") # removing Week, NA, and "" 
+
+for (i in 1:13){weeklystatsdf[,i]=factor(weeklystatsdf[,i])} # Factoring to remove those levels  
+{% endhighlight %}
+
+Few more changes required to the data frame. 
+
+1. Removing a column named blank because there are no entries at all (structure of the website).
+2. Converting columns of points, yards and turnovers to numeric. They are currently factor variables.
+3. Reorder factor levels of Week to make them chronological.
+
+
+{% highlight r %}
+weeklystatsdf$Blank=NULL
+
+for (i in 7:12){weeklystatsdf[,i]=as.numeric(levels(weeklystatsdf[,i]))[weeklystatsdf[,i]]} 
+#Make cols with points, yards turnovers numeric
+levels(weeklystatsdf$Week)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] "1"         "10"        "11"        "12"        "13"       
+##  [6] "14"        "15"        "16"        "17"        "2"        
+## [11] "3"         "4"         "5"         "6"         "7"        
+## [16] "8"         "9"         "ConfChamp" "Division"  "SuperBowl"
+## [21] "WildCard"  "18"
+{% endhighlight %}
+
+
+
+{% highlight r %}
+weeklystatsdf$Week = factor(weeklystatsdf$Week,levels(weeklystatsdf$Week)[c(1,10:17,2:9,22,21,19,18,20)]) 
+# reordering the factor levels for week in order to make them chronological
+levels(weeklystatsdf$Week) # check
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] "1"         "2"         "3"         "4"         "5"        
+##  [6] "6"         "7"         "8"         "9"         "10"       
+## [11] "11"        "12"        "13"        "14"        "15"       
+## [16] "16"        "17"        "18"        "WildCard"  "Division" 
+## [21] "ConfChamp" "SuperBowl"
+{% endhighlight %}
+
+
+# Few Analyses
+
+Let us add 7 more columns to our data. Columns for point difference between winner and loser, difference in turnovers between winner and loser, and lastly, difference in net yards gained between winner and loser. We also add 3 columns for total points, total turnovers, and total yards gained in the game. The last column, Details, will come in handy to provide some information regarding teams that played the game and their points. 
+
+
+{% highlight r %}
+weeklystatsdf=mutate(weeklystatsdf,
+                Points.Diff=Points.Win-Points.Lose,
+                YardsGained.Diff=YardsGained.Win-YardsGained.Lose,
+                Turnovers.Diff=Turnovers.Win-Turnovers.Lose,
+                Points.Sum=Points.Win+Points.Lose,
+                YardsGained.Sum=YardsGained.Win+YardsGained.Lose,
+                Turnovers.Sum=Turnovers.Win+Turnovers.Lose,
+                Details=paste("<table><tr><td>Win.Team:",Win.Team,"<br>Lose.Team:",
+                    Lose.Team,"<br>Points.Win:",Points.Win,"<br>Points.Lose:",Points.Lose,"</td></tr></table>")
+                )
+dim(weeklystatsdf) # rows and columns
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 13946    20
+{% endhighlight %}
+
+
+
+{% highlight r %}
+names(weeklystatsdf) # names of variables
+{% endhighlight %}
+
+
+
+{% highlight text %}
+##  [1] "Week"             "Day"              "Date"            
+##  [4] "Win.Team"         "At"               "Lose.Team"       
+##  [7] "Points.Win"       "Points.Lose"      "YardsGained.Win" 
+## [10] "Turnovers.Win"    "YardsGained.Lose" "Turnovers.Lose"  
+## [13] "Year"             "Points.Diff"      "YardsGained.Diff"
+## [16] "Turnovers.Diff"   "Points.Sum"       "YardsGained.Sum" 
+## [19] "Turnovers.Sum"    "Details"
+{% endhighlight %}
+
+
+A quick check again - When did the first Super Bowl happen and in which year did the latest Super Bowl happen? How many Super Bowls?
+
+{% highlight r %}
+nrow(filter(weeklystatsdf,Week=="SuperBowl"))
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 48
+{% endhighlight %}
+
+
+
+{% highlight r %}
+range(filter(weeklystatsdf,Week=="SuperBowl")$Year)
+{% endhighlight %}
+
+
+
+{% highlight text %}
+## [1] 1966 2013
+{% endhighlight %}
+
+There have been 48 Super Bowls (all this trouble to find this?). The catch is that there's a lag of a year in the data, i.e., the Year column indicates year of the football season. The Super Bowl for that season occured the following calendar year. This is something to keep in mind when following through with rest of the analysis.
+
+## How many times did different teams that played in the Super Bowl win and lose?
+
+We address this question by creating two single column data frames, one of only the winning teams and the other of only the losing team. Then we add another column to both these data frame with a dummy indicator for a win or a loss. These are then merged into a single data frame for an nvd3 plot using rCharts. 
+
+
+{% highlight r %}
+wins=weeklystatsdf %.%
+  filter (Week=="SuperBowl") %.%
+  select(Win.Team) %.%
+  mutate (Win.Loss="Win")
+names(wins)=c("Team","Win.Loss")
+wins$Team=factor(wins$Team) # removing team levels not in the resulting data frame
+
+losses=weeklystatsdf %.%
+  filter (Week=="SuperBowl") %.%
+  select(Lose.Team) %.%
+  mutate (Win.Loss="Loss")
+names(losses)=c("Team","Win.Loss")
+losses$Team=factor(losses$Team) # removing team levels not in the resulting data frame
+
+winlosses=rbind(wins,losses)
+winlosstab=as.data.frame(table(winlosses$Team,winlosses$Win.Loss))
+names(winlosstab)=c("Team","Win.Loss","Count") 
+
+library(rCharts)
+nwl=nPlot(Count ~ Team, group="Win.Loss", data=winlosstab, type='multiBarChart')
+nwl$chart(color=c("red","green"))
+nwl$xAxis(rotateLabels=-90)
+nwl$chart(reduceXTicks = FALSE)
+nwl$chart(stacked=TRUE)
+#nwl$publish("nwl", host="gist")          
+{% endhighlight %}
+
+**Hovering over the bars should provide details of different teams. The stacked bars provide a count of the number of their wins (green) and losses (in red). The combined height is the number of appearances.You can also unstack the bars by clicking the "Grouped" circle/dot (top left).**
+
+<iframe height="475" width="100%" src="http://www.pagist.info/8862601"></iframe>
+
+
+## Statistics for key variables for all Super Bowls
+
+
+{% highlight r %}
+supbowl=weeklystatsdf %.% 
+  filter(Week=="SuperBowl") %.%
+  select(Points.Win:Details) %.%
+  group_by(Year)
+  
+library(reshape2)
+supbowlmelt=melt(supbowl,id=c("Year","Details"))
+
+supplot=nPlot(value~Year, group="variable", data=supbowlmelt, type="lineWithFocusChart")
+supplot$set(disabled=c(T,T,T,T,T,T,F,T,T,T,T,T)) 
+supplot$chart(tooltipContent = "#! function(key, x, y, Details){ 
+           return key + ':' + y + '<br>'+ 'Year:' + x + '<br>'+ Details.point.Details
+} !#")
+#supplot$publish("supplot",host="gist")
+{% endhighlight %}
+
+The following nvd3 chart, via rCharts, begins by plotting only the difference in points across all the Super Bowls. **Additional lines can be plotted (or removed) by clicking on the legend above the chart. Also note that the smaller chart below the main chart has a sliding horizontal axis, which will magnify the main chart in the time-window specified. You can get details of which team won and which team lost by hovering over the lines.**
+
+
+<iframe height="475" width="100%" src="http://www.pagist.info/8862107"></iframe>
+
+
+## Have total points, total yards gained, total turnovers and differences between winners and losers with respect to points, yards gained, and turnovers changed over years since 1966? Data for a year are averaged across all weeks for the season, including the Super Bowl.
+
+
+{% highlight r %}
+yrgp=weeklystatsdf %.% 
+  filter(Year>=1966) %.%
+  group_by(Year) %.%
+  summarise(
+             Mean.Points.Sum=round(mean(Points.Sum),digits=2),
+             Mean.YardsGained.Sum=round(mean(YardsGained.Sum),digits=2),
+             Mean.Turnovers.Sum=round(mean(Turnovers.Sum),digits=2),
+             Mean.Points.Diff=round(mean(Points.Diff),digits=2),
+             Mean.YardsGained.Diff=round(mean(YardsGained.Diff),digits=2),
+             Mean.Turnovers.Diff=round(mean(Turnovers.Diff),digits=2)
+             )
+yrgpmelt=melt(yrgp,id="Year")
+
+totyearsum=nPlot(value~Year, group="variable", data=yrgpmelt, type="lineWithFocusChart")
+totyearsum$set(disabled=c(T,T,T,F,T,T))
+#totyearsum$publish("totyearsum",host="gist")
+{% endhighlight %}
+
+As with the earlier chart, this begins by plotting only the mean difference in points across all years. **Additional lines can be plotted (or removed) by clicking on the legend above the chart. Yet again, the smaller chart below the main chart has a sliding horizontal axis, which will magnify the main chart in the time-window specified.**
+
+<iframe height="475" width="100%" src="http://www.pagist.info/8870547"></iframe>
+
+
+## Have different statistics changed across different weeks of a season, including the Super Bowl? Data for a week is averaged across all years since Super Bowl began in 1966.
+
+
+{% highlight r %}
+weekgp=weeklystatsdf %.% 
+  filter(Year>=1966) %.%
+  group_by(Week) %.%
+  summarise(
+             Mean.Points.Sum=round(mean(Points.Sum),digits=2),
+             Mean.YardsGained.Sum=round(mean(YardsGained.Sum),digits=2),
+             Mean.Turnovers.Sum=round(mean(Turnovers.Sum),digits=2),
+             Mean.Points.Diff=round(mean(Points.Diff),digits=2),
+             Mean.YardsGained.Diff=round(mean(YardsGained.Diff),digits=2),
+             Mean.Turnovers.Diff=round(mean(Turnovers.Diff),digits=2)
+             )
+
+weekgpmelt=melt(weekgp,id="Week")
+
+weeklyhplot=hPlot(y="value", x="Week", group="variable", data=weekgpmelt, type="line")
+weeklyhplot$chart(zoomType = "xy")
+weeklyhplot$xAxis(labels=list(rotation = -90), style=list(fontSize='10px'), categories = levels(weekgp$Week))
+weeklyhplot$legend(align = 'top', verticalAlign = 'top', layout = 'horizontal')
+#weeklyhplot$publish("weeklyhplot",host="gist")
+{% endhighlight %}
+
+In the following interactive highchart via rCharts, **you can use the mouse to draw a square/rectangle in the chart area to zoom that section. You can also click on the text of the legend to make that specific line disappear (or reappear).**
+
+<iframe height="475" width="100%" src="http://www.pagist.info/8863311"></iframe>
+
+
+
+## Lastly, an interactive shiny application for data from 1966 which does the following.
+
+1. Plots mean of different statistics by week for different years using ggplot2
+2. Interactive scatterplots for every week and year with information on the teams playing and outcome of the game using nvd3 (via rCharts). 
+
+Before we work on the app, we need to do a bit more processing of the data. For one, we will save the weeklystatsdf data frame. We also create the following data frame (named 'weekgpyr'). The latter will be used for generating plots for weekly and annual means and our weeklystatsdf data frame will be used to generate interactive scatterplots.
+
+
+{% highlight r %}
+weekgpyr=weeklystatsdf %.% 
+  group_by(Week,Year) %.%
+summarise (
+             Mean.Points.Win=mean(Points.Win), 
+             Mean.Points.Lose=mean(Points.Lose), 
+             Mean.YardsGained.Win=mean(YardsGained.Win), 
+             Mean.YardsGained.Lose=mean(YardsGained.Lose),
+             Mean.Turnovers.Win=mean(Turnovers.Win),
+             Mean.Turnovers.Lose=mean(Turnovers.Lose),
+             Mean.Points.Sum=mean(Points.Sum),
+             Mean.YardsGained.Sum=mean(YardsGained.Sum),
+             Mean.Turnovers.Sum=mean(Turnovers.Sum),
+             Mean.Points.Diff=mean(Points.Diff),
+             Mean.YardsGained.Diff=mean(YardsGained.Diff),
+             Mean.Turnovers.Diff=mean(Turnovers.Diff)
+)
+weekgpyrmelt=melt(weekgpyr,id=c("Week","Year"))
+#save(weekgpyrmelt,file="weekgpyrmelt.rda")
+#save(weeklystatsdf, file="weeklystatsdf.rda")
+{% endhighlight %}
+
+
+The code of this app can be found with the code for the entire post on github (see the links provided at the beginning of the post). Direct link to this app is: <a href="http://patilv.shinyapps.io/nflshiny/" target="_blank"> http://patilv.shinyapps.io/nflshiny/ </a> . An alternate app doing the same thing can be found at <a href="http://glimmer.rstudio.com/vivekpatil/nflshinyglimmer/" target="_blank"> http://glimmer.rstudio.com/vivekpatil/nflshinyglimmer/ </a>
+
+<iframe height="850" width="100%" src="http://patilv.shinyapps.io/nflshiny/"></iframe>
