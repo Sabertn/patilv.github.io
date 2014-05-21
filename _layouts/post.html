@@ -32,11 +32,11 @@ hr { display: block; height: 2px;
     <header class="header-title">
       <div class="header-title-wrap">
         {% if page.link %}
-          <h1 class="entry-title"><a href="{{ page.link }}">{{ page.title }}</a></h1>
+          <h2 class="entry-title"><a href="{{ page.link }}">{{ page.title }}</a></h2>
         {% else %}
-          <h1 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h1>
+          <h2 class="entry-title"><a href="{{ site.url }}{{ page.url }}" rel="bookmark" title="{{ page.title }}">{{ page.title }}</a></h2>
         {% endif %}
-        <h2>{{ page.date | date: "%B %d, %Y" }}</h2>
+        <h3>{{ page.date | date: "%B %d, %Y" }}</h3>
 		<hr>
 		</div><!-- /.header-title-wrap -->
     </header>
