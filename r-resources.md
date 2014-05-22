@@ -5,7 +5,7 @@ title: R-Resources
 share: true
 comments: true
 ---
-While I haven't explored few of them in detail, many of them have been useful to me. They are in no particular order and there are many more. Please contact me with any additional ones you'd like included. Given that this site is on GitHub, you could begin adding/suggesting entries yourself.
+Although I've clubbed all of these resources under the R category, some of them are more about statistics/machine learning and not about R. While I haven't explored all of them in detail, many of them have been useful to me. They are in no particular order and there are many more. Please contact me with any additional ones you'd like included. Given that this site is on GitHub, you could begin adding/suggesting entries yourself.
 
 * R Project [http://www.r-project.org/](http://www.r-project.org/)
 
