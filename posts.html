@@ -10,7 +10,10 @@ share: true
 hr { display: block; height: 2px;
     border: 0; border-top: 1px solid;
 	WIDTH=100%; color:firebrick;
-    margin: 1em 0; padding: 0; }
+    margin: 1em 0; padding: 0; 
+	}
+	
+p {color:black}
 </style>
 <hr>
 {% for post in site.posts %}
@@ -23,7 +26,11 @@ hr { display: block; height: 2px;
       <ul>
     {% endif %}
 
-        <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+        <li class="entry-title"><span class="post-date" style="color: firebrick;"><h3> {{ post.date | date_to_string }} </span> <a href="{{ post.url }}">{{ post.title }}</a> </h3>
+		
+		<p> {{ post.excerpt }} </p>
+		</li>
+		
 
     {% if forloop.last %}
       </ul>

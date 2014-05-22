@@ -6,10 +6,9 @@ tags: [boxplot, choropleth, correlation, education, ggplot2, googleVis, motionch
 comments: true
 share: true
 ---
-**Link to the code for the analysis program is given at the very end.**
+I teach in a business school and am always fascinated by rankings published by different outlets. As much as one would like to think that they are meaningless, they seem to influence how many [business schools actively try to manage their reputation](http://www.palgrave-journals.com/crr/journal/v3/n4/abs/1540123a.html). One such ranking of undergraduate business schools was recently published by [Bloomberg Businessweek](http://www.businessweek.com/). I thought I'll take a closer look at the numbers and try to present my analyses using only graphs and charts. **Link to the code for the analysis program is given at the very end.**
 
-I teach in a business school and am always fascinated by rankings published by different outlets. As much as one would like to think that they are meaningless, they seem to influence how many [business schools actively try to manage their reputation](http://www.palgrave-journals.com/crr/journal/v3/n4/abs/1540123a.html). One such ranking of undergraduate business schools was recently published by [Bloomberg Businessweek](http://www.businessweek.com/). I thought I'll take a closer look at the numbers and try to present my analyses using only graphs and charts. The Businessweek article  presented [table(s) on their website.](http://www.businessweek.com/articles/2013-03-20/best-undergraduate-business-schools-2013) I have recreated that table below. (You can click on any column header to sort the table based on that column.) 
-
+The Businessweek article  presented [table(s) on their website.](http://www.businessweek.com/articles/2013-03-20/best-undergraduate-business-schools-2013) I have recreated that table below. (You can click on any column header to sort the table based on that column.) 
 
 <iframe width="100%" height="400" src="//dl.dropboxusercontent.com/u/56796392/bschool/bschooltable.html" frameborder="0"> </iframe>
 

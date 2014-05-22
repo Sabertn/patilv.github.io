@@ -6,8 +6,6 @@ tags: [barchart, choropleth, googleVis, R, Shiny, healthcare]
 comments: true
 share: true
 ---
-
-## Introduction
 The most recent *Morbidity and Mortality Weekly Report*, dated May 2, 2014, from the Centers for Disease Control and Prevention had [a report by Yoon et al. (2014) on potentially preventable deaths from 5 leading causes of death for people under the age of 80.](http://www.cdc.gov/mmwr/preview/mmwrhtml/mm6317a1.htm?s_cid=mm6317a1_w) In this post, I use interactive bar charts and choropleths to help visualize state-wise statistics. For these charts, I use googleVis and RStudio's shiny server platform. This post was generated using slidify and the [code necessary to recreate it can be found on github.](https://github.com/patilv/preventabledeaths) The [code for the accompanying shiny app can also be found on github.](https://github.com/patilv/preventableshiny)      
 
 ## Data

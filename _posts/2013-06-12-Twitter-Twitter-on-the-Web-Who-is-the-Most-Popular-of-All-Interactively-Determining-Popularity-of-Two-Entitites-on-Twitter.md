@@ -6,8 +6,6 @@ tags: [barchart, boxplot, densityplot, ggplot2, linechart, R, sentiment, Shiny, 
 comments: true
 share: true
 ---
-**Code updated based on feedback (see list of changes at the very end)**
-
 Okay, that was a take on the [mirror mirror on the wall quote from Snow White.](https://en.wikipedia.org/wiki/Snow_White) This continues my saga of learning from the superb work done by the R-community and building on their ideas. My [first post on twitter-related analysis](patilv.github.com/Twitter-Twitter-on-the-Web-Who-is-the-Most-Popular-of-All-Interactively-Determining-Popularity-of-Two-Entitites-on-Twitter/) relied on data downloaded at a particular time for interactively analyzing tweets from 5 different universities. In this second post on twitter-related analysis, let's advance that idea this time by retrieving tweets on the fly. As I mentioned in my earlier post, it is possible that twitter might prevent the application from retrieving tweets after a few attempts. So, I'm hoping that it doesn't happen. If you run into trouble, then you, of course, have access to the entire code used for this post. [GitHub link](https://github.com/patilv/Popsenti), should work if I'm doing it remotely correctly; else, [an htm file with the code for the server and user interface files](https://www.dropbox.com/s/9hg8a29p9g1o227/Popularitysentiment.htm) can be downloaded.
 
 In this application, I attempted to build on ideas and functions from a chapter titled "Popularity Contest" from Jeffrey Stanton's book-[Introduction to Data Science](http://jsresearch.net/wiki/projects/teachdatascience) and bring interactivity to many of those functions. Here, a user of the application can compare the popularity (on twitter) of any two people/objects/entities. I again use the [shiny server framework advanced by R-Studio for web-based interactivity.](http://www.rstudio.com/shiny/) This is super cool stuff. Thanks.
@@ -60,7 +58,7 @@ Please note that tweets were cleaned prior to the generation of these word cloud
 
 **Concluding Thoughts**: This has been really fun. When and what next, no clue.
 
-App has been updated. 
+App code was updated based on feedback from readers. 
 
 * Replaced references to entity 1 and 2 in tables and graphs with their values
 * Time slider increases every 30 secs rather than 1 second.

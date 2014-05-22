@@ -6,12 +6,24 @@
 		<li>
 			<a href="#">Blog</a>
 			<ul class="dl-submenu">
-				<li><a href="{{ site.url }}/posts/">Listing of All Posts</a></li>
-				<li><a href="{{ site.url }}/tags/">All Posts by Tags</a></li>
+				<li><a href="{{ site.url }}/posts/">Listing and Snippets of All Posts</a></li>
+				<li><a href="{{ site.url }}/tags/">Posts Classified by Tags/Topics</a></li>
 			</ul>
 		</li>
+		<li>
+			<a href="#">Blog Roll</a>
+			<ul class="dl-submenu">
+				<li>
+					<a href="http://www.r-bloggers.com/" target="_blank"><img src="{{ site.url }}/images/rbloggers.png"></a>
+				</li>
+				<li>
+					<a href="http://www.statsblogs.com/" target="_blank"><img src="{{ site.url }}/images/statsblogs.png"></a>
+				</li>
+			</ul><!-- /.dl-submenu -->
+		</li>
+		
 		{% for link in site.links %}<li>{% if link.external %}<a href="{{ link.url }}">{{ link.title }}</a>{% else %}<a href="{{ site.url }}{{ link.url }}">{{ link.title }}</a>{% endif %}</li>{% endfor %}
-	
+		
 		<li>
 			<a href="#">About</a>
 			<ul class="dl-submenu">

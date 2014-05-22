@@ -6,10 +6,8 @@ tags: [barchart, dotplot, ggplot2, R, scatterplot, Shiny]
 comments: true
 share: true
 ---
+In this post, I show how one can interact with a dataset and generate graphs on the fly (technically, I've predetermined which graphs to create, but it should not be difficult to build a menu of possible graphs). I am using the services provided by RStudio for hosting this app through the shiny server. Thanks a ton for this opportunity and the wonderful set of tools you have. For this, I use data from slides on [Bloomberg businessweek's site](http://images.businessweek.com/slideshows/2012-09-26/americas-50-best-cities) on the characteristics of the best cities of US in 2012. 
 
-Data from slides on [Bloomberg businessweek's site.](http://images.businessweek.com/slideshows/2012-09-26/americas-50-best-cities)
-
-In this post, I show how one can interact with a dataset and generate graphs on the fly (technically, I've predetermined which graphs to create, but it should not be difficult to build a menu of possible graphs). This required setting up the shiny server running on Ubuntu. This current server is being hosted by Gonzaga. Big thanks to Bob Toshack for help in trying to get the server public. Work in progress. In the meanwhile, I am using the services provided by RStudio for hosting this. Thanks a ton, RStudio, for this opportunity and the wonderful set of tools you have. And I am getting tired of this best cities dataset. So, the last few apps using that. Please click on the pictures below to go to the site and play with it. Remember to come back to go to the next set of interactive graphs.**[Update: The site has been embedded below. There is no longer a need to leave this site.]**
 
 1.Generating bar plots and/or dot plots of any variable you choose (from the preloaded data).
 

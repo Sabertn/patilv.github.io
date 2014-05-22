@@ -6,9 +6,6 @@ tags: [barchart, ggplot2, linechart, R, rCharts, education]
 comments: true
 share: true
 ---
-
-# Introduction
-
 John Oliver, in his very first episode on [HBO's new show, *Last Week Tonight*](http://www.youtube.com/watch?v=5tCmriZSxxk), talked about Indian elections and the near-absence of its coverage in US Television. In response to that show, [Alyssa Ayres wrote in Forbes](http://www.forbes.com/sites/alyssaayres/2014/05/01/thanks-john-oliver-why-india-isnt-a-big-focus-for-u-s-television/) that US's attention on India was scant.  This, according to her, is also reflected in the pattern of languages studied in the US. [She presented data in a tabular format](http://www.forbes.com/sites/alyssaayres/2014/05/01/thanks-john-oliver-why-india-isnt-a-big-focus-for-u-s-television/) from the [Modern Languages Enrollment Database](https://www.mla.org/flsurvey_search) for 3 survey years-2002, 2006, and 2009 to show that the number of students enrolling to study Indian languages were very few in comparison to other popular languages. 
 
 Assuming that the knowledge of a language helps one understand culture in a better manner and could also potentially provide an advantage in international relations and business, it was of interest to me to see how different languages fared across a longer time frame. Here, I look at the pattern of language enrollments from [MLA surveys of enrollments in US institutions of higher education](https://www.mla.org/flsurvey_search) using ggplot2 and rely on rCharts to facilitate comparison between any two or more languages across and within different years. This post has been generated using slidify and the [code to reproduce it, along with the code and data for different charts can be found on github.](https://github.com/patilv/language)   

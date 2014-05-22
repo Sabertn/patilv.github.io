@@ -8,7 +8,7 @@ url:              http://patilv.github.io/
 owner:
   name:           Vivek Patil
   avatar:         Vivekwebsite.jpg
-  bio:            "Associate Professor of Marketing"
+  bio:            ""
   email:          patilv@gmail.com
   
 # Social networking links used in footer. Update and remove as you like.
@@ -40,6 +40,7 @@ links:
   - title: Public Datasets
     url: /public-datasets
     #external: true
+  
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    America/Seattle
