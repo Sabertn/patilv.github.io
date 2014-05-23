@@ -123,4 +123,4 @@ np2$chart(showControls = F)
 
 **[If this doesn't show up, please click on this link to interact with the chart](http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo)**
 
-<iframe height="450" width="100%" src="http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo"></iframe>
+<iframe height="450" width="1250" src="http://bl.ocks.org/patilv/raw/b4694cc7b6d9e5e7b173/#.U21UPfldWSo"></iframe>
