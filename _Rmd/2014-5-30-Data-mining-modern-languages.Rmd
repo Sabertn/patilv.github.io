@@ -2,7 +2,7 @@
 layout: post
 title: "Data Mining Modern Languages Enrollments in US"
 description: "modern languages"
-tags: [ggplot2, rCharts, line charts]
+tags: [R, ggplot2, rCharts, line charts]
 comments: true
 share: true
 ---
