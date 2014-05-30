@@ -22,3 +22,4 @@ This is a listing of few publically available sources of data or other lists, wh
 * Transportation and logistics: [http://www.rita.dot.gov/bts/data_and_statistics/index.html](http://www.rita.dot.gov/bts/data_and_statistics/index.html)
 * Bureau of Labor Statistics: [http://www.bls.gov/data/](http://www.bls.gov/data/)
 * US Census: [http://censtats.census.gov/](http://censtats.census.gov/)
+* A Compilation of [100+ interesting datasets by Robert Seaton](http://rs.io/2014/05/29/list-of-data-sets.html)
