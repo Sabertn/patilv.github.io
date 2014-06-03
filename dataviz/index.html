@@ -1,0 +1,47 @@
+---
+layout: post-index
+title: Adventures in Analytics and Visualization
+description: "intro"
+tags: []
+image:
+  feature: ggplot.png
+  credit: Code
+  creditlink: https://raw.githubusercontent.com/patilv/patilv.github.io/master/assets/SITEHEADERIMAGE.R
+comments: true
+share: true
+---
+<style>
+hr { display: block; height: 2px;
+    border: 0; border-top: 1px solid;
+	WIDTH=100%; color:firebrick;
+    margin: 1em 0; padding: 0; }
+</style>
+<h2>Welcome! </h1>
+<hr>
+This site was initially hosted on the blogger platform at <a href="http://analyticsandvisualization.blogspot.com">http://analyticsandvisualization.blogspot.com</a> and has now been migrated on to a Jekyll/GitHub platform. In the migration process, I may have tweaked the first few sentences of few of my posts to take advantage of the newer features this platform provides. The purpose of this site is three-fold.
+
+<ol>
+<li> To provide a venue to comment on issues that I find important, such as health care, crime, poverty, business/economics, and education. In these comments, I use a data-driven approach (primarily using R) to highlight a specific issue.
+<li> To provide a good blogging platform. My reason for switching from blogger was that it was not connected with my work-flow for the production of blog posts. Given that my work now involves writing in R markdown, I am hoping this serves me well.
+<li> Provide a listing of technical resources to people interested in R and other packages that I have found useful.
+</ol>
+<h2> Most Recent Post
+<hr>
+
+{% for post in paginator.posts limit:1 %}
+<article class="hentry">
+  <header>
+    <div class="entry-meta"><span class="entry-date date published updated"><time datetime="{{ post.date | date_to_xmlschema }}"><a href="{{ site.url }}{{ post.url }}">{{ post.date | date: "%B %d, %Y" }}</a></time></span><span class="author vcard"><span class="fn"><a href="{{ site.url }}/about/" title="About {{ site.owner.name }}">{{ site.owner.name }}</a></span></span>{% if site.disqus_shortname and post.comments %}&nbsp; &bull; &nbsp;<span class="entry-comments"><a href="{{ site.url }}{{ post.url }}#disqus_thread">Comment</a></span>{% endif %}</div><!-- /.entry-meta -->
+    {% if post.link %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}"><i class="icon-double-angle-right"></i></a> <a href="{{ post.link }}">{{ post.title }}</a></h1>
+    {% else %}
+      <h1 class="entry-title"><a href="{{ site.url }}{{ post.url }}" rel="bookmark" title="{{ post.title }}" itemprop="url">{{ post.title }}</a></h1>
+    {% endif %}
+  </header>
+  <div class="entry-content">
+    {{ post.content }}
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+{% endfor %}
+
+</div><!-- /.pagination -->
