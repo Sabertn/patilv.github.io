@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /dataviz/index
+permalink: /dataviz/syllabus
 title: Data Visualization Course
 comments: true
 share: true
