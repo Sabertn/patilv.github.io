@@ -1,0 +1,99 @@
+---
+layout: post
+title: "Playing with Anscombe's Quartet in an interactive shiny ggvis environment"
+description: "interactive Anscombe's"
+tags: [R, ggplot2, scatterplot, ggvis, shiny]
+comments: true
+share: true
+---
+Anscombe's quartet is a set of four datasets with two variables (x and y) and 11 observations.It has been been used to demonstrate the importance of graphically displaying data. It has appeared not only in books (for example, in the first page of the first chapter of Tufte's seminal work, [Visual Display of Quantitative Information](http://www.edwardtufte.com/tufte/books_vdqi)), but also in scholarly papers (for example, see [Healy and Moody, 2014](http://kieranhealy.org/files/papers/data-visualization.pdf)), and blog posts (for example, [see Hirst](http://blog.ouseful.info/2011/08/30/the-visual-difference-%E2%80%93-r-and-anscombe%E2%80%99s-quartet/)). Here, I use  ggvis in the shiny environment to play with the quartet. The code for the post and the accompanying shiny app can be [found on my github site.](https://github.com/patilv/AnscombeViz) 
+
+I must acknowledge the work of the team at R-Studio, which has provided all of the packages used for this post. 
+
+### Anscombe's Quartet
+
+<style>
+iframe[seamless]{
+    background-color: transparent;
+    border: 0px none transparent;
+    padding: 0px;
+    overflow: hidden;
+}
+</style>
+
+```{r setup, echo=FALSE}
+library(knitr)
+opts_chunk$set(
+  tidy=TRUE,
+  tidy.opts=list(width.cutoff=70,replace.assign=TRUE))
+```
+
+
+```{r results='asis', message=FALSE}
+library(ggplot2)
+library(dplyr)
+library(ggvis)
+library(knitr)
+# library(shiny) 
+anscombe=as.data.frame(anscombe)
+anscombereorder=anscombe[,c(1,5,2,6,3,7,4,8)]
+kable(anscombereorder, format="html",table.attr='cellpadding="7"',row.names=TRUE)
+
+```
+
+
+The quartet has 4 datasets with two variables x and y. They have been displayed above as being x1 and y1, x2 and y2, x3 and y3, and lastly, x4 and y4. 
+
+### Beauty of the Quartet
+
+Basic statistical characteristics of these datasets are almost identical. See the table below. However, when they are graphed, differences between them are clearly visible.  
+
+```{r results='asis'}
+anscombelong=data.frame(x=unlist(anscombe[,1:4]),
+                               y=unlist(anscombe[,5:8]),
+                               datasource=rep(1:4,each=11))
+kable(anscombelong %>%
+  group_by(datasource) %>%
+  summarise("x-mean"=mean(x),"y-mean"=mean(y),"x-variance"=var(x),"y-variance"=var(y), "correlation-xy"= cor(x,y)),table.attr='cellpadding="3"', format="html",row.names=FALSE)
+
+```
+
+```{r echo=FALSE}
+# http://stackoverflow.com/questions/7549694/ggplot2-adding-regression-line-equation-and-r2-on-graph 
+lm_eqn = function(m) {
+  l <- list(a = format(coef(m)[1], digits = 2),
+      b = format(abs(coef(m)[2]), digits = 2),
+      r2 = format(summary(m)$r.squared, digits = 3));
+
+  if (coef(m)[2] >= 0)  {
+    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,l)
+  } else {
+    eq <- substitute(italic(y) == a - b %.% italic(x)*","~~italic(r)^2~"="~r2,l)    
+  }
+
+  as.character(as.expression(eq));                 
+}
+```
+
+The plots...
+
+
+```{r}
+
+ggplot(anscombelong,aes(x=x,y=y))+geom_point()+geom_smooth(method="lm",se=FALSE)+annotate("text", x = 12, y = 4, label = lm_eqn(lm(y ~ x, anscombelong)), color="black",  parse = TRUE)+ylim(3,13)+xlim(4,19)+facet_wrap(~datasource)+theme(legend.position="none")+theme_bw()
+
+
+```
+
+
+**The linear regression lines have the same equation.**
+
+Please note that if you are replicating the above graph, you will need a function, whose code I didn't display here (but is available in the R markdown document). This function was used to print the regression line equation along with the graphs. It was copied from the discussion on [StackOverflow](http://stackoverflow.com/questions/7549694/ggplot2-adding-regression-line-equation-and-r2-on-graph) and is available with the code for this Rmarkdown document.
+
+### Interactivity using ggvis in a shiny application
+
+* You can hover over the points to see the specific x- and y-values.
+* This animated visualization can flip across the 4 datasets and show how the regression line remains the same. Press the "Start Flipping" link at the top right of this plot.
+
+
+<iframe frameborder="0" allowtransparency="true" scrolling="no" height="450" width="100%" src="https://patilv.shinyapps.io/AnscombeVizshiny/"></iframe>
