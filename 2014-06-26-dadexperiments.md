@@ -1,12 +1,10 @@
 ---
-layout: post
-title: "A review of Dad's book of Awesome Science Experiments"
-description: "A review"
-tags: [Opinion-Life]
+layout: page
+permalink: /dadexperiments/
+title: A Review of "Dad's Book of Awesome Science Experiments"
 comments: true
 share: true
 ---
-
 ![cover](/img/2014-06-26-dadexperiments/cover.jpg) 
 
 [This book by Mike Adamick](http://www.amazon.com/Dads-Book-Awesome-Science-Experiments/dp/1440570779/ref=la_B00DNH13DA_1_1?s=books&ie=UTF8&qid=1403814418&sr=1-1) was my father's day gift from Avisha, my 4 year old daughter.  [This was my wife's idea, of course.] I was thrilled to get it. Anything that would build an interest in my daughter(s) in science was definitely worth it. Unsure of whether it was appropriate for a 4 year old, I skimmed through the contents and the first few experiments. My first thoughts were that the experiments were definitely going to be interesting and fun to conduct. Following are my impressions at the end of three of the 30 experiments with my daughter.
