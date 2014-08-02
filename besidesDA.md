@@ -7,5 +7,5 @@ comments: true
 ---
 # Opining on Other Topics
 
-26 January 2014 : **[A Review of "Dad's Book of Awesome Science Experiments"](http://patilv.github.io//dadexperiments)**
+26 June 2014 : **[A Review of "Dad's Book of Awesome Science Experiments"](http://patilv.github.io//dadexperiments)**
 
