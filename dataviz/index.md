@@ -1,12 +1,12 @@
 ---
 layout: page
-permalink: /dataviz-index/
+permalink: /dataviz/index/
 title: Data Visualization
 comments: true
 share: true
 ---
+<center> ## Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University </center>
 
-# Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University
 # Textbooks
 
 1.  Few, Stephen (2012). Show Me the Numbers, 2nd Ed. Analytics Press: Burlingame, CA.
@@ -50,18 +50,18 @@ Useful Links (A more comprehensive listing can be found on [my website's R-resou
 Select Readings
 ====================================================
 
-## Perception and Graph Types
+#### Perception and Graph Types
 
 1. [Healey: Perception in Visualization](http://www.csc.ncsu.edu/faculty/healey/PP/index.html)
 2. [FusionCharts' Principles of Data Visualization](http://www.fusioncharts.com/whitepapers/downloads/Principles-of-Data-Visualization.pdf)
 3. [Few: Effectively Communicating Numbers - Selecting the Best Means and Manner of Display](http://www.perceptualedge.com/articles/Whitepapers/Communicating_Numbers.pdf)
 
-## Design Issues
+#### Design Issues
 
 4. [How to graph badly: Notes from John Boyd's class on Scientific Visualization and Information Architecture](http://www-personal.umich.edu/~jpboyd/sciviz_1_graphbadly.pdf)
 5. [The Gospel According to Tufte: : Notes from John Boyd's class on Scientific Visualization and Information Architecture](http://www-personal.umich.edu/~jpboyd/eng403_chap2_tuftegospel.pdf)
 
-## Issues in different graphs
+#### Issues in different graphs
 
 6. [Quantitative versus Categorical](http://www.perceptualedge.com/articles/dmreview/quant_vs_cat_data.pdf): Few
 7. [Continuous versus Categorical](http://eagereyes.org/basics/data-continuous-vs-categorical): Kosara
