@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /dataviz-index
+permalink: /dataviz-index/
 title: Data Visualization
 comments: true
 share: true
