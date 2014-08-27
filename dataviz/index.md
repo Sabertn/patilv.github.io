@@ -5,7 +5,7 @@ title: Data Visualization
 comments: true
 share: true
 ---
-<center> <h1> Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University </h1></center>
+<center> <h1> MBUS 699/MKTG 489 : Fall 2014 : Gonzaga University </h1></center>
 
 # Textbooks
 
