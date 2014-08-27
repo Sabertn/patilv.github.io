@@ -5,15 +5,16 @@ title: Data Visualization
 comments: true
 share: true
 ---
-<center> ## Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University </center>
+<center> <h1> Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University </h1></center>
 
 # Textbooks
 
 1.  Few, Stephen (2012). Show Me the Numbers, 2nd Ed. Analytics Press: Burlingame, CA.
-2.  Stanton, Jeffrey and Robert De Graaf (2013). Introduction to Data Science (Version 3)  [Download here.](http://1drv.ms/1AOHzQo)
-3.	Wickham, Hadley(2009). ggplot2: Elegant Graphics for Data Analysis. Springer:New York
-4.	Xie, Yihui (2014). Dynamic Documents with R and Knitr. Taylor and Francis Group: Boca Raton, FL.
-5.	Zhao, Yanchang (2013). R and Data Mining: Examples and Case Studies. San Diego: CA, Elsevier. [Download here.](http://cran.r-project.org/doc/contrib/Zhao_R_and_ data_mining.pdf)
+2.  Tufte, Edward (2001). The Visual Display of Quantitative Information. Graphics Press LLC: Cheshire: CT
+3.  Stanton, Jeffrey and Robert De Graaf (2013). Introduction to Data Science (Version 3)  [Download here.](http://1drv.ms/1AOHzQo)
+4.	Wickham, Hadley(2009). ggplot2: Elegant Graphics for Data Analysis. Springer:New York
+5.	Xie, Yihui (2014). Dynamic Documents with R and Knitr. Taylor and Francis Group: Boca Raton, FL.
+6.	Zhao, Yanchang (2013). R and Data Mining: Examples and Case Studies. San Diego: CA, Elsevier. [Download here.](http://cran.r-project.org/doc/contrib/Zhao_R_and_ data_mining.pdf)
 
 # Software and Hardware
 
@@ -22,9 +23,9 @@ R, R-Studio and other required packages should be setup on individual student's 
 
 # Topics in Course (Discussion of few topics will be spread across multiple weeks)
 
-1.  Introduction to Data visualization and R (Lab: Setup of R and  R-Studio)
-2.	Perception of visual information and Graph Types (Lab: Getting started with the R, RStudio and Data Exploration)
-3.	Design of data graphics (Lab: R environment continued and base R graphics)
+1.  Introduction to Data visualization and R 
+2.	Perception of visual information and Graph Types
+3.	Design of data graphics
 4.	R environment and RMarkdown 
 5.	ggplot2 
 6.	Interactive visualizations : ggvis, rCharts and googleVis
