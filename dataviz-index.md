@@ -1,11 +1,12 @@
 ---
 layout: page
 permalink: /dataviz-index
-title: Data Visualization (MBUS 699/MKTG 489: Fall 2014, Gonzaga University)
+title: Data Visualization
 comments: true
 share: true
 ---
 
+# Course: MBUS 699/MKTG 489, Fall 2014, Gonzaga University
 # Textbooks
 
 1.  Few, Stephen (2012). Show Me the Numbers, 2nd Ed. Analytics Press: Burlingame, CA.
