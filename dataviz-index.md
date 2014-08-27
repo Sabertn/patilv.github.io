@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /dataviz/index/
+permalink: /dataviz-index
 title: Data Visualization (MBUS 699/MKTG 489: Fall 2014, Gonzaga University)
 comments: true
 share: true
