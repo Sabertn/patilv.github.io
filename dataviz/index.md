@@ -87,7 +87,7 @@ Select Readings
 
 To do
 
-* Sign up for an account on [GitHub](www.github.com)
+* Sign up for an account on [GitHub](www.github.com) and download the client for it. For [Windows, click here](https://windows.github.com/) and for [Mac, click here.](https://mac.github.com/) 
 * Sign up to receive [r-bloggers emails](www.r-bloggers.com)
 * [Download R](www.r-project.org)
 * [Download R-studio](www.rstudio.com)
