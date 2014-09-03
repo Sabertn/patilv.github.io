@@ -84,3 +84,11 @@ Select Readings
 ## Slides
 
 1. [Introduction](http://patilv.github.io/01-Introduction/#1)
+
+To do
+
+* Sign up for an account on [GitHub](www.github.com)
+* Sign up to receive [r-bloggers emails](www.r-bloggers.com)
+* [Download R](www.r-project.org)
+* [Download R-studio](www.rstudio.com)
+* [Download MikTex/latex installation](http://miktex.org/2.9/setup)
