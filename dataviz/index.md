@@ -79,3 +79,8 @@ Select Readings
 17. [You only see colors you can name](http://eagereyes.org/blog/2011/you-only-see-colors-you-can-name): Kosara
 
 18. [Data Visualization Checklist](http://stephanieevergreen.com/wp-content/uploads/2014/05/DataVizChecklist_May2014.pdf): Evergreen and Emery
+
+
+## Slides
+
+1. [Introduction](http://patilv.github.io/01-Introduction/#1)
