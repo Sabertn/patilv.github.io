@@ -86,7 +86,7 @@ Select Readings
 
 ## Slides
 
-* [1. Introduction](http://patilv.github.io/01-Introduction/#1)
+[1. Introduction](http://patilv.github.io/01-Introduction/#1) <br>
 
 To do
 
@@ -96,4 +96,5 @@ To do
   * [Download R-studio](www.rstudio.com)
   * [Download MikTex/latex installation](http://miktex.org/2.9/setup)
 
-* [2. Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1)
+
+[2. Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1) <br>
