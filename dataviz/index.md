@@ -11,10 +11,13 @@ share: true
 
 1.  Few, Stephen (2012). Show Me the Numbers, 2nd Ed. Analytics Press: Burlingame, CA.
 2.  Tufte, Edward (2001). The Visual Display of Quantitative Information. Graphics Press LLC: Cheshire: CT
-3.  Stanton, Jeffrey and Robert De Graaf (2013). Introduction to Data Science (Version 3)  [Download here.](http://1drv.ms/1AOHzQo)
+3.  Stanton, Jeffrey and Robert De Graaf (2013). Introduction to Data Science (Version 3)  [Download here.](http://1drv.ms/1AOHzQo). [Code and text copy of book from here.]()
 4.	Wickham, Hadley(2009). ggplot2: Elegant Graphics for Data Analysis. Springer:New York
 5.	Xie, Yihui (2014). Dynamic Documents with R and Knitr. Taylor and Francis Group: Boca Raton, FL.
-6.	Zhao, Yanchang (2013). R and Data Mining: Examples and Case Studies. San Diego: CA, Elsevier. [Download here.](http://cran.r-project.org/doc/contrib/Zhao_R_and_ data_mining.pdf)
+6.	Zhao, Yanchang (2013). R and Data Mining: Examples and Case Studies. San Diego: CA, Elsevier. [Download here.](http://cran.r-project.org/doc/contrib/Zhao_R_and_data_mining.pdf) [Code can be downloaded here.](http://www.rdatamining.com/books/rdm/code)
+
+
+
 
 # Software and Hardware
 
@@ -92,3 +95,5 @@ To do
 * [Download R](www.r-project.org)
 * [Download R-studio](www.rstudio.com)
 * [Download MikTex/latex installation](http://miktex.org/2.9/setup)
+
+2. [ Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1)
