@@ -98,3 +98,5 @@ To do
 
 
 [2. Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1) <br>
+
+[3. Variations in and Design of Graphs](http://patilv.github.io/03-VariationsinandDesignofGraphs) <br>
