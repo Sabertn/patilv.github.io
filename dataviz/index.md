@@ -64,6 +64,7 @@ Select Readings
 
 4. [How to graph badly: Notes from John Boyd's class on Scientific Visualization and Information Architecture](http://www-personal.umich.edu/~jpboyd/sciviz_1_graphbadly.pdf)
 5. [The Gospel According to Tufte: : Notes from John Boyd's class on Scientific Visualization and Information Architecture](http://www-personal.umich.edu/~jpboyd/eng403_chap2_tuftegospel.pdf)
+5A. A good resource on how to graph poorly - [By Karl Broman](https://github.com/kbroman/Talk_Graphs)
 
 #### Issues in different graphs
 
@@ -98,5 +99,6 @@ To do
 
 
 [2. Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1) <br>
+
 
 [3. Variations in and Design of Graphs](http://patilv.github.io/03-VariationsinandDesignofGraphs) <br>
