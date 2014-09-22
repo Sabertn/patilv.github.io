@@ -96,9 +96,15 @@ To do
   * [Download R](www.r-project.org)
   * [Download R-studio](www.rstudio.com)
   * [Download MikTex/latex installation](http://miktex.org/2.9/setup)
+  
+Assignment 1: Summarize issues of perception of graphs (Healey and Fusion Charts' links above). <br>
 
 
 [2. Visual Perception and Variations in Graphs](http://patilv.github.io/02-PerceptionandVariationsinGraphs/#1) <br>
 
+Assignment 2: Summarize Boyd's lecture notes on how to graph badly and on Tufte's gospel (see links above). <br>
 
 [3. Variations in and Design of Graphs](http://patilv.github.io/03-VariationsinandDesignofGraphs) <br>
+
+Assignment 3: Prepare a pdf manual of common base R plots from this blog post using Rmarkdown and pandoc. ([Link to blog post](http://patilv.com/Replication-of-few-graphs-charts-in-base-R-ggplot2-and-rCharts-part-1-base-R/))
+
