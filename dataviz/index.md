@@ -104,7 +104,13 @@ Assignment 1: Summarize issues of perception of graphs (Healey and Fusion Charts
 
 Assignment 2: Summarize Boyd's lecture notes on how to graph badly and on Tufte's gospel (see links above). <br>
 
-[3. Variations in and Design of Graphs](http://patilv.github.io/03-VariationsinandDesignofGraphs) <br>
+[3. Variations in Graphs](http://patilv.github.io/03-VariationsinandDesignofGraphs) <br>
 
 Assignment 3: Prepare a pdf manual of common base R plots from this blog post using Rmarkdown and pandoc. ([Link to blog post](http://patilv.com/Replication-of-few-graphs-charts-in-base-R-ggplot2-and-rCharts-part-1-base-R/))
+
+
+[4. Design of Graphs]()
+
+* dplyr tutorial from [Kevin Markham](http://rpubs.com/justmarkham/dplyr-tutorial)
+* tidyr tutorial from [RStudio's Blog](http://blog.rstudio.org/2014/07/22/introducing-tidyr/)
 
