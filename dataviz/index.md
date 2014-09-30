@@ -114,3 +114,4 @@ Assignment 3: Prepare a pdf manual of common base R plots from this blog post us
 * dplyr tutorial from [Kevin Markham](http://rpubs.com/justmarkham/dplyr-tutorial)
 * tidyr tutorial from [RStudio's Blog](http://blog.rstudio.org/2014/07/22/introducing-tidyr/)
 
+[5. Data manipulation using dplyr](http://patilv.com/dplyr)
