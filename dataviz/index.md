@@ -115,3 +115,5 @@ Assignment 3: Prepare a pdf manual of common base R plots from this blog post us
 * tidyr tutorial from [RStudio's Blog](http://blog.rstudio.org/2014/07/22/introducing-tidyr/)
 
 [5. Data manipulation using dplyr](http://patilv.com/dplyr)
+
+[6. googleVis](http://patilv.com/googleVis-tutorial)
