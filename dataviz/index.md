@@ -72,17 +72,18 @@ Select Readings
 7. [Continuous versus Categorical](http://eagereyes.org/basics/data-continuous-vs-categorical): Kosara
 8. [Nathan Yau: Visualizing and comparing distributions](http://flowingdata.com/2012/05/15/how-to-visualize-and-compare-distributions/)
 9. [Naomi Robbins: Dot plots: A Useful Alternative to Bar Charts](http://www.b-eye-network.com/view/index.php?cid=2468)
-10. [When Bars Point Down](http://eagereyes.org/journalism/when-bars-point-down): Kosara: eagereyes
-11. [Understanding Pie Charts](http://eagereyes.org/techniques/pie-charts): Kosara: eagereyes
-12. [Few on box plots: Perceptual Edge](http://www.perceptualedge.com/articles/dmreview/boxes_of_insight.pdf)
-13. [Parallel coordinates charts](http://eagereyes.org/techniques/parallel-coordinates): Kosara: eagereyes
-14. [Parallel Coordinates charts](http://www.perceptualedge.com/articles/b-eye/parallel_coordinates.pdf)
-15. [Few: Line graphs and irregular intervals](http://www.perceptualedge.com/articles/visual_business_intelligence/line_graphs_and_irregular_intervals.pdf)
+10. [Di Cook: Alternatives to stacked barcharts](http://dicook.github.io/2014/09/25/facetted-barcharts/) 
+11. [When Bars Point Down](http://eagereyes.org/journalism/when-bars-point-down): Kosara: eagereyes
+12. [Understanding Pie Charts](http://eagereyes.org/techniques/pie-charts): Kosara: eagereyes
+13. [Few on box plots: Perceptual Edge](http://www.perceptualedge.com/articles/dmreview/boxes_of_insight.pdf)
+14. [Parallel coordinates charts](http://eagereyes.org/techniques/parallel-coordinates): Kosara: eagereyes
+15. [Parallel Coordinates charts](http://www.perceptualedge.com/articles/b-eye/parallel_coordinates.pdf)
+16. [Few: Line graphs and irregular intervals](http://www.perceptualedge.com/articles/visual_business_intelligence/line_graphs_and_irregular_intervals.pdf)
 
-16. [How Rainbow Color Maps Mislead](http://eagereyes.org/basics/rainbow-color-map): Kosara
-17. [You only see colors you can name](http://eagereyes.org/blog/2011/you-only-see-colors-you-can-name): Kosara
+17. [How Rainbow Color Maps Mislead](http://eagereyes.org/basics/rainbow-color-map): Kosara
+18. [You only see colors you can name](http://eagereyes.org/blog/2011/you-only-see-colors-you-can-name): Kosara
 
-18. [Data Visualization Checklist](http://stephanieevergreen.com/wp-content/uploads/2014/05/DataVizChecklist_May2014.pdf): Evergreen and Emery
+19. [Data Visualization Checklist](http://stephanieevergreen.com/wp-content/uploads/2014/05/DataVizChecklist_May2014.pdf): Evergreen and Emery
 
 
 ## Slides
