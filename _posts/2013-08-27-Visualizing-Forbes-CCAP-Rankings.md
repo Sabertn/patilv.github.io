@@ -52,7 +52,7 @@ is rated higher on that attribute.
 The table below provides information used for subsequent analysis. The
 table can be sorted by any column.
  
-<iframe height="900" width="100%" src="//pagist.github.io/?6358635" frameborder="0"> </iframe>
+<iframe height="900" width="100%" src="//bl.ocks.org/patilv/raw/6358635/" frameborder="0"> </iframe>
 
 **Where are the 100 best value schools in the country?**
 
