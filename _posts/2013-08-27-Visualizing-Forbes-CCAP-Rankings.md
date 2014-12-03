@@ -87,7 +87,7 @@ through 599. It is also the case that of the 100 schools, only 3 are
 private and the remaining 97 are public schools. 
 **(You can hover over the dots to identify the school.)**
 
-<iframe width="100%" height="450" src="//pagist.github.io/?6358673" frameborder="0"> </iframe>
+<iframe width="100%" height="450" src="//bl.ocks.org/patilv/raw/6358673" frameborder="0"> </iframe>
 
    
 **How are different criteria related to each other?**
